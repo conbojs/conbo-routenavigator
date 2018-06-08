@@ -25,7 +25,7 @@
 	"readme": "./README.md",
 	"types": "./dist/RouteNavigator.d.ts",
 	"dependencies": {
-		"conbo": "^4.3.8",
-		"conbo-viewnavigator": "^1.0.2"
+		"conbo": "^4.3.9",
+		"conbo-viewnavigator": "^1.0.3"
 	}
 }
