@@ -1,0 +1,31 @@
+{
+	"name": "conbo-routenavigator",
+	"version": "0.0.1",
+	"description": "Extends conbo-viewnavigator to integrate Router functionality and enable auto instantiation of Views based on the current path",
+	"keywords": [
+		"conbo",
+		"router",
+		"path",
+		"view",
+		"navigator",
+		"viewstack",
+		"manager"
+	],
+	"homepage": "https://conbo.mesmotronic.com",
+	"license": "BSD-3-Clause",
+	"author": "Mesmotronic",
+	"files": [
+		"dist"
+	],
+	"main": "./dist/RouteNavigator.js",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mesmotronic/conbo-routenavigator.git"
+	},
+	"readme": "./README.md",
+	"types": "./dist/RouteNavigator.d.ts",
+	"dependencies": {
+		"conbo": "^4.3.8",
+		"conbo-viewnavigator": "^1.0.2"
+	}
+}
