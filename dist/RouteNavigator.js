@@ -33,13 +33,13 @@ var RouteNavigator = /** @class */ (function (_super) {
         });
         router
             .addEventListener(conbo_1.ConboEvent.FAULT, this.dispatchEvent, this)
-            .addEventListener(conbo_1.ConboEvent.CHANGE, this.__changeHandler, this);
+            .addEventListener(conbo_1.ConboEvent.ROUTE, this.__routeHandler, this);
         this.router = router;
     };
     /**
      * @private
      */
-    RouteNavigator.prototype.__changeHandler = function (event) {
+    RouteNavigator.prototype.__routeHandler = function (event) {
         var viewClass = this.context.namespace[event.name];
         var options = conbo_1.assign({}, event.params, { context: this.context });
         this.replaceView(viewClass, options);

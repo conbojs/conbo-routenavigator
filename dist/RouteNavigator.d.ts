@@ -24,5 +24,5 @@ export default class RouteNavigator extends ViewNavigator {
     /**
      * @private
      */
-    private __changeHandler;
+    private __routeHandler;
 }

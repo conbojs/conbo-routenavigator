@@ -36,7 +36,7 @@ export default class RouteNavigator extends ViewNavigator
 
 		router
 			.addEventListener(ConboEvent.FAULT, this.dispatchEvent, this)
-			.addEventListener(ConboEvent.CHANGE, this.__changeHandler, this)
+			.addEventListener(ConboEvent.ROUTE, this.__routeHandler, this)
 			;
 
 		this.router = router;
@@ -45,7 +45,7 @@ export default class RouteNavigator extends ViewNavigator
 	/**
 	 * @private
 	 */
-	private __changeHandler(event:ConboEvent):void
+	private __routeHandler(event:ConboEvent):void
 	{
 		let viewClass = this.context.namespace[event.name];
 		let options = assign({}, event.params, {context:this.context});
