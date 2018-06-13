@@ -25,8 +25,8 @@ var RouteNavigator = /** @class */ (function (_super) {
     /**
      * @private
      */
-    RouteNavigator.prototype.__construct = function (options) {
-        _super.prototype.__construct.call(this, options);
+    RouteNavigator.prototype.preinitialize = function (options) {
+        _super.prototype.preinitialize.call(this, options);
         var router = options.router || new conbo_1.Router({
             context: this.context,
             routes: options.routes || this.routes
@@ -45,5 +45,5 @@ var RouteNavigator = /** @class */ (function (_super) {
         this.replaceView(viewClass, options);
     };
     return RouteNavigator;
-}(conbo_viewnavigator_1.default));
+}(conbo_viewnavigator_1.ViewNavigator));
 exports.default = RouteNavigator;

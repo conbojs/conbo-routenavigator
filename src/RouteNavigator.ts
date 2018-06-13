@@ -1,5 +1,5 @@
 import { Router, ConboEvent, assign } from 'conbo';
-import ViewNavigator from 'conbo-viewnavigator';
+import { ViewNavigator } from 'conbo-viewnavigator';
 
 /**
  * RouteNavigator for ConboJS
@@ -24,9 +24,9 @@ export default class RouteNavigator extends ViewNavigator
 	/**
 	 * @private
 	 */
-	protected __construct(options:any):void
+	protected preinitialize(options:any):void
 	{
-		super.__construct(options);
+		super.preinitialize(options);
 
 		let router:Router = options.router || new Router
 		({

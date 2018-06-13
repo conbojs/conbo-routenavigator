@@ -1,5 +1,5 @@
 import { Router } from 'conbo';
-import ViewNavigator from 'conbo-viewnavigator';
+import { ViewNavigator } from 'conbo-viewnavigator';
 /**
  * RouteNavigator for ConboJS
  * @author	Mesmotronic Limited <https://www.mesmotronic.com/>
@@ -20,7 +20,7 @@ export default class RouteNavigator extends ViewNavigator {
     /**
      * @private
      */
-    protected __construct(options: any): void;
+    protected preinitialize(options: any): void;
     /**
      * @private
      */
