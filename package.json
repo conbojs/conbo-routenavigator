@@ -26,6 +26,6 @@
 	"types": "./dist/RouteNavigator.d.ts",
 	"dependencies": {
 		"conbo": "^4.3.29",
-		"conbo-viewnavigator": "^1.2.0"
+		"conbo-viewnavigator": "^1.2.1"
 	}
 }
