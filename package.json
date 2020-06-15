@@ -1,6 +1,6 @@
 {
 	"name": "conbo-routenavigator",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"description": "Extends conbo-viewnavigator to integrate Router functionality and enable auto instantiation of Views based on the current path",
 	"keywords": [
 		"conbo",
@@ -25,7 +25,7 @@
 	"readme": "./README.md",
 	"types": "./dist/RouteNavigator.d.ts",
 	"dependencies": {
-		"conbo": "^4.3.9",
-		"conbo-viewnavigator": "^1.1.1"
+		"conbo": "^4.3.29",
+		"conbo-viewnavigator": "^1.2.0"
 	}
 }

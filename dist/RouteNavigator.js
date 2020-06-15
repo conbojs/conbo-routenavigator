@@ -1,8 +1,11 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -32,15 +35,15 @@ var RouteNavigator = /** @class */ (function (_super) {
             routes: options.routes || this.routes
         });
         router
-            .addEventListener(conbo_1.ConboEvent.FAULT, this.dispatchEvent, this)
-            .addEventListener(conbo_1.ConboEvent.ROUTE, this.__routeHandler, this);
+            .addEventListener(conbo_1.ConboEvent.FAULT, this.dispatchEvent, { scope: this })
+            .addEventListener(conbo_1.ConboEvent.ROUTE, this.__routeHandler, { scope: this });
         this.router = router;
     };
     /**
      * @private
      */
     RouteNavigator.prototype.__routeHandler = function (event) {
-        var viewClass = this.context.namespace[event.name];
+        var viewClass = event.data || this.context.namespace[event.name];
         var options = conbo_1.assign({}, event.params, { context: this.context });
         this.replaceView(viewClass, options);
     };

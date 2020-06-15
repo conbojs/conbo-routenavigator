@@ -1,4 +1,4 @@
-import { Router, ConboEvent, assign } from 'conbo';
+import { assign, ConboEvent, Router } from 'conbo';
 import { ViewNavigator } from 'conbo-viewnavigator';
 
 /**
@@ -35,8 +35,8 @@ export default class RouteNavigator extends ViewNavigator
 		});
 
 		router
-			.addEventListener(ConboEvent.FAULT, this.dispatchEvent, this)
-			.addEventListener(ConboEvent.ROUTE, this.__routeHandler, this)
+			.addEventListener(ConboEvent.FAULT, this.dispatchEvent, {scope:this})
+			.addEventListener(ConboEvent.ROUTE, this.__routeHandler, {scope:this})
 			;
 
 		this.router = router;
@@ -47,7 +47,7 @@ export default class RouteNavigator extends ViewNavigator
 	 */
 	private __routeHandler(event:ConboEvent):void
 	{
-		let viewClass = this.context.namespace[event.name];
+		let viewClass = event.data || this.context.namespace[event.name];
 		let options = assign({}, event.params, {context:this.context});
 
 		this.replaceView(viewClass, options);
